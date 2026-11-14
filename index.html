@@ -4,754 +4,715 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#100d18">
-<meta name="description" content="Rüveyde için hazırlanmış özel bir sayfa.">
-<title>Rüveyde | Belki Bir Gün...</title>
+<title>Rüveyde ❤️</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --bg: #100d18;
-    --surface: #211829;
-    --pink: #f3b8d0;
-    --pink-light: #fff0f5;
-    --text: #e5d3df;
-    --muted: #bbaab9;
-    --border: #56354c;
+  --bg: #100914;
+  --pink: #ff8fc7;
+  --light: #ffe4f2;
+  --purple: #38152f;
+  --card: rgba(255,255,255,0.055);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 75px;
-    overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-    width: 100%;
-    min-width: 320px;
-    overflow-x: hidden;
-    background: var(--bg);
-    color: white;
-    font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
 }
 
-button, a {
-    -webkit-tap-highlight-color: transparent;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(174,55,130,.16), transparent 30%),
+    radial-gradient(circle at 85% 75%, rgba(113,44,130,.15), transparent 35%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 button {
-    font-family: inherit;
-}
-
-::selection {
-    background: #d77da6;
-    color: white;
+  font-family: inherit;
 }
 
 /* NAVBAR */
 
-.navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 20;
-    padding: 25px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+nav {
+  width: 100%;
+  padding: 22px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 10;
 }
 
 .logo {
-    color: var(--pink);
-    font-family: 'Playfair Display', serif;
-    font-size: 23px;
+  color: var(--pink);
+  font-size: 23px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
-.nav-links {
-    display: flex;
-    gap: 30px;
+nav a {
+  color: #f7d9e9;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 14px;
+  transition: .3s;
 }
 
-.nav-links a {
-    color: #e6d6e1;
-    font-size: 12px;
-    text-decoration: none;
-    transition: .3s;
-}
-
-.nav-links a:hover {
-    color: var(--pink);
+nav a:hover {
+  color: var(--pink);
 }
 
 /* HERO */
 
 .hero {
-    min-height: 100vh;
-    min-height: 100svh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 100px 20px 50px;
-    overflow: hidden;
-
-    background:
-    radial-gradient(ellipse at 50% 35%, #75415f 0%, transparent 50%),
-    linear-gradient(145deg, #21172c, #100d18 80%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px 60px;
+  position: relative;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-    radial-gradient(circle at 15% 20%, #e99cbd18, transparent 30%),
-    radial-gradient(circle at 85% 80%, #d77da618, transparent 30%);
+.hero-small {
+  color: var(--pink);
+  letter-spacing: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 850px;
-    animation: appear 1.8s ease;
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(65px, 12vw, 125px);
+  color: white;
+  line-height: 1.1;
+  text-shadow: 0 0 35px rgba(255,143,199,.3);
 }
 
-.small-title {
-    color: #e9a9c4;
-    letter-spacing: 6px;
-    font-size: 12px;
-    text-transform: uppercase;
-    margin-bottom: 25px;
+.hero h1 span {
+  color: var(--pink);
 }
 
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(65px, 12vw, 125px);
-    font-weight: 400;
-    color: var(--pink-light);
-    text-shadow: 0 0 35px #e58ab8;
-}
-
-.subtitle {
-    margin-top: 20px;
-    color: #dfc5d3;
-    font-size: clamp(12px, 1.5vw, 16px);
-    letter-spacing: 2px;
-    line-height: 1.9;
+.hero p {
+  max-width: 540px;
+  color: #d6bdcf;
+  line-height: 1.9;
+  margin-top: 25px;
+  font-size: 16px;
 }
 
 .main-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 42px;
-    padding: 15px 35px;
-    min-height: 48px;
-    border: 1px solid #e6a3c2;
-    border-radius: 40px;
-    color: white;
-    text-decoration: none;
-    transition: .4s;
-    cursor: pointer;
-    background: transparent;
-    font-size: 13px;
+  margin-top: 35px;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 40px;
+  background: linear-gradient(120deg, #d94b9c, #8e3c94);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 25px rgba(217,75,156,.25);
+  transition: .3s;
 }
 
 .main-button:hover {
-    background: #d77da6;
-    box-shadow: 0 0 30px #d77da6;
-    transform: translateY(-4px);
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(217,75,156,.5);
 }
 
-/* FLOATING HEARTS */
-
-.heart {
-    position: absolute;
-    color: #f1a6c5;
-    opacity: .4;
-    animation: float 7s infinite ease-in-out;
-    pointer-events: none;
-}
-
-@keyframes float {
-    0%,100% {
-        transform: translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-45px) rotate(15deg);
-    }
-}
-
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.scroll {
+  position: absolute;
+  bottom: 30px;
+  color: #b99bb0;
+  font-size: 12px;
+  letter-spacing: 3px;
 }
 
 /* GENERAL SECTIONS */
 
 section {
-    padding: 110px 6%;
-    scroll-margin-top: 20px;
+  padding: 100px 8%;
 }
 
-.section-title {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 4vw, 45px);
-    font-weight: 400;
-    color: var(--pink);
-    margin-bottom: 18px;
+.section-heading {
+  text-align: center;
+  margin-bottom: 55px;
 }
 
-.section-subtitle {
-    text-align: center;
-    color: var(--muted);
-    font-size: 13px;
-    margin-bottom: 55px;
-    line-height: 1.8;
+.section-heading .mini {
+  color: var(--pink);
+  font-size: 12px;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
-/* ABOUT */
-
-.about {
-    background: #17111f;
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 48px);
 }
 
-.about-card {
-    max-width: 780px;
-    width: 100%;
-    margin: auto;
-    padding: 55px 45px;
-    border: 1px solid var(--border);
-    background: linear-gradient(145deg,#281b30,#191320);
-    border-radius: 20px;
-    text-align: center;
-    line-height: 2.2;
-    color: var(--text);
-    font-size: 14px;
-    box-shadow: 0 20px 70px #0005;
+.section-heading p {
+  color: #c9b4c5;
+  margin-top: 15px;
 }
 
-.quote {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(21px, 3vw, 27px);
-    color: var(--pink);
-    margin-bottom: 25px;
-    line-height: 1.6;
+/* REASONS */
+
+.reasons-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
-/* CARDS */
-
-.memories {
-    background: var(--bg);
+.reason-card {
+  background: var(--card);
+  border: 1px solid rgba(255,143,199,.13);
+  padding: 30px;
+  border-radius: 20px;
+  transition: .35s;
+  position: relative;
+  overflow: hidden;
 }
 
-.cards {
-    max-width: 1100px;
-    width: 100%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
+.reason-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(255,143,199,.55);
+  background: rgba(255,143,199,.08);
 }
 
-.card {
-    padding: 45px 25px;
-    background: var(--surface);
-    border: 1px solid #4b3049;
-    border-radius: 18px;
-    text-align: center;
-    transition: .4s;
+.reason-card span {
+  color: var(--pink);
+  font-size: 13px;
+  letter-spacing: 2px;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    border-color: #e6a3c2;
-    box-shadow: 0 10px 35px #d77da622;
+.reason-card h3 {
+  font-size: 21px;
+  margin: 17px 0 12px;
 }
 
-.icon {
-    font-size: 38px;
-    margin-bottom: 20px;
+.reason-card p {
+  color: #cbb9c8;
+  line-height: 1.8;
+  font-size: 14px;
 }
 
-.card h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--pink);
-    font-size: 23px;
-    margin-bottom: 15px;
+/* SPECIAL FINAL CARD */
+
+.final-reason {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 55px 25px;
+  background: linear-gradient(135deg, #39152f, #86265f, #39152f);
+  border: 1px solid rgba(255,180,220,.6);
+  box-shadow: 0 0 30px rgba(255,80,170,.2);
 }
 
-.card p {
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 2;
+.final-reason:hover {
+  transform: scale(1.015);
+  box-shadow: 0 0 45px rgba(255,80,170,.5);
+}
+
+.final-reason h3 {
+  font-size: clamp(35px, 7vw, 60px);
+  letter-spacing: 3px;
+  color: white;
+  text-shadow: 0 0 18px #ff8acb;
+}
+
+.final-reason p {
+  color: #ffe1f1;
+  font-size: 16px;
+}
+
+.final-heart {
+  font-size: 38px;
+  color: #ffb4dc;
+  margin-top: 20px;
+  animation: heartbeat 1.3s infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+/* DREAM SECTION */
+
+.dream-section {
+  background: rgba(255,255,255,.018);
+}
+
+.dream-grid {
+  max-width: 1050px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dream-card {
+  padding: 35px 25px;
+  background: linear-gradient(145deg, rgba(255,143,199,.11), rgba(255,255,255,.025));
+  border: 1px solid rgba(255,143,199,.14);
+  border-radius: 20px;
+  text-align: center;
+  transition: .3s;
+}
+
+.dream-card:hover {
+  transform: translateY(-7px);
+  background: rgba(255,143,199,.12);
+}
+
+.dream-card .emoji {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.dream-card h3 {
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.dream-card p {
+  color: #cbb9c8;
+  font-size: 14px;
+  line-height: 1.8;
 }
 
 /* LETTER */
 
-.letter {
-    background: linear-gradient(180deg,#17111f,#241522);
-    text-align: center;
+.letter-section {
+  text-align: center;
 }
 
-.envelope {
-    max-width: 680px;
-    width: 100%;
-    margin: auto;
-    padding: 50px 40px;
-    background: #2b1c2c;
-    border: 1px solid #88536f;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px #0004;
+.letter-box {
+  max-width: 700px;
+  margin: auto;
+  padding: 45px 30px;
+  border: 1px solid rgba(255,143,199,.2);
+  border-radius: 25px;
+  background: var(--card);
 }
 
-.envelope-icon {
-    font-size: 48px;
-    animation: float 4s infinite ease-in-out;
+.letter-box h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin-bottom: 15px;
 }
 
-.envelope p {
-    color: #e4c9d8;
-    line-height: 2.2;
-    margin: 22px 0;
-    font-size: 14px;
+.letter-box p {
+  color: #cbb9c8;
+  line-height: 1.8;
 }
 
-#secret {
-    display: none;
-    animation: appear 1s ease;
-    margin-top: 30px;
-    border-top: 1px solid #754b65;
-    padding-top: 25px;
+.letter-button {
+  margin-top: 25px;
+  padding: 14px 27px;
+  border: none;
+  border-radius: 30px;
+  background: #d94b9c;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
 }
 
-#secret p:first-child {
-    font-family: 'Playfair Display', serif;
-    font-size: 29px;
-    color: var(--pink);
+.letter-button:hover {
+  background: #f06bb5;
+  transform: scale(1.04);
+}
+
+.secret-letter {
+  display: none;
+  margin-top: 30px;
+  padding: 25px;
+  background: rgba(255,143,199,.08);
+  border-radius: 15px;
+  color: #ffe4f2;
+  line-height: 2;
+  animation: fadeIn .7s ease;
+}
+
+.secret-letter.show {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* FOOTER */
 
 footer {
-    padding: 40px 20px;
-    text-align: center;
-    background: var(--bg);
-    color: #a98b9d;
-    font-size: 11px;
-    letter-spacing: 2px;
-    line-height: 2;
+  padding: 35px 20px;
+  text-align: center;
+  color: #aa91a4;
+  font-size: 13px;
+  border-top: 1px solid rgba(255,255,255,.07);
 }
 
-/* FLOATING HEART ANIMATION */
+footer span {
+  color: var(--pink);
+}
+
+/* MUSIC BUTTON */
+
+.music-button {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 20;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,143,199,.5);
+  background: #421a39;
+  color: white;
+  font-size: 21px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,143,199,.2);
+  transition: .3s;
+}
+
+.music-button:hover {
+  transform: scale(1.1);
+}
+
+/* FLOATING HEARTS */
 
 .floating-heart {
-    position: fixed;
-    bottom: -30px;
-    color: #ed9cbd;
-    opacity: .5;
-    pointer-events: none;
-    z-index: 30;
-    animation: rise 7s linear forwards;
+  position: fixed;
+  bottom: -30px;
+  color: rgba(255,143,199,.4);
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  z-index: -1;
 }
 
-@keyframes rise {
-    to {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: 1; }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
 }
 
-/* TABLET */
+/* RESPONSIVE */
 
-@media (max-width: 900px) {
-    .navbar {
-        padding: 22px 5%;
-    }
+@media (max-width: 800px) {
+  nav {
+    padding: 20px 5%;
+  }
 
-    .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-    }
+  nav a {
+    margin-left: 12px;
+    font-size: 12px;
+  }
 
-    section {
-        padding: 85px 5%;
-    }
+  section {
+    padding: 80px 6%;
+  }
+
+  .dream-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-
-/* MOBILE */
 
 @media (max-width: 600px) {
+  nav {
+    justify-content: center;
+  }
 
-    .navbar {
-        justify-content: center;
-        padding: 20px;
-    }
+  nav .nav-links {
+    display: none;
+  }
 
-    .logo {
-        font-size: 22px;
-    }
+  .hero {
+    min-height: 90vh;
+  }
 
-    .nav-links {
-        display: none;
-    }
+  .hero p {
+    font-size: 14px;
+  }
 
-    .hero {
-        padding: 80px 20px 40px;
-    }
+  .reasons-grid,
+  .dream-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .small-title {
-        font-size: 10px;
-        letter-spacing: 4px;
-        margin-bottom: 20px;
-    }
+  .reason-card {
+    padding: 25px;
+  }
 
-    h1 {
-        font-size: clamp(55px, 17vw, 85px);
-    }
+  .final-reason {
+    grid-column: auto;
+    padding: 40px 18px;
+  }
 
-    .subtitle {
-        font-size: 12px;
-        letter-spacing: 1px;
-    }
+  .letter-box {
+    padding: 35px 20px;
+  }
 
-    .main-button {
-        padding: 14px 27px;
-        font-size: 12px;
-        margin-top: 32px;
-    }
-
-    section {
-        padding: 75px 18px;
-    }
-
-    .section-title {
-        font-size: 32px;
-    }
-
-    .section-subtitle {
-        font-size: 11px;
-        margin-bottom: 35px;
-    }
-
-    .about-card {
-        padding: 30px 20px;
-        font-size: 13px;
-        line-height: 2;
-    }
-
-    .quote {
-        font-size: 21px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .card {
-        padding: 35px 22px;
-    }
-
-    .card h3 {
-        font-size: 21px;
-    }
-
-    .card p {
-        font-size: 13px;
-    }
-
-    .envelope {
-        padding: 32px 20px;
-    }
-
-    .envelope p {
-        font-size: 13px;
-    }
-
-    #secret p:first-child {
-        font-size: 26px;
-    }
-
-    footer {
-        padding: 30px 15px;
-        font-size: 9px;
-    }
-}
-
-/* SMALL MOBILE */
-
-@media (max-width: 360px) {
-    h1 {
-        font-size: 52px;
-    }
-
-    .section-title {
-        font-size: 28px;
-    }
-
-    .about-card {
-        padding: 25px 15px;
-    }
-
-    .main-button {
-        padding: 12px 22px;
-    }
-}
-
-/* REDUCE MOTION ACCESSIBILITY */
-
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
+  .music-button {
+    bottom: 18px;
+    right: 18px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-
-<nav class="navbar">
-    <div class="logo">Rüveyde ♡</div>
-
-    <div class="nav-links">
-        <a href="#about">Hakkında</a>
-        <a href="#memories">Hayaller</a>
-        <a href="#letter">Sana Notum</a>
-    </div>
+<nav>
+  <div class="logo">R ♥</div>
+  <div class="nav-links">
+    <a href="#home">Ana Sayfa</a>
+    <a href="#reasons">Neden Biz?</a>
+    <a href="#dreams">Hayallerimiz</a>
+    <a href="#letter">Sana Bir Not</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 
-<header class="hero">
+<header class="hero" id="home">
+  <div class="hero-small">Sadece sana özel bir şey...</div>
 
-    <div class="heart" style="top:15%;left:12%;font-size:35px;">♡</div>
-    <div class="heart" style="top:65%;left:80%;font-size:50px;animation-delay:2s;">♥</div>
-    <div class="heart" style="top:25%;right:15%;font-size:25px;animation-delay:3s;">♡</div>
-    <div class="heart" style="bottom:10%;left:25%;font-size:30px;animation-delay:1s;">♥</div>
+  <h1>Rüveyde<span>.</span></h1>
 
-    <div class="hero-content">
+  <p>
+    Belki de bazı insanlar hayatımıza tesadüfen girer
+    ama onlarla yaşayabileceğimiz güzel şeyler tamamen bizim seçimimizdir.
+    Bu küçük site de sana özel. ❤️
+  </p>
 
-        <div class="small-title">
-            Sadece sana özel
-        </div>
+  <a href="#reasons" class="main-button">Birlikte bakalım ❤️</a>
 
-        <h1>Rüveyde</h1>
-
-        <p class="subtitle">
-            Bazı insanlar tesadüften çok daha fazlasıdır...
-        </p>
-
-        <a href="#about" class="main-button">
-            Hikâyeye göz at ♡
-        </a>
-
-    </div>
+  <div class="scroll">AŞAĞI KAYDIR ↓</div>
 </header>
 
-<!-- ABOUT -->
+<!-- REASONS -->
 
-<section class="about" id="about">
+<section id="reasons">
+  <div class="section-heading">
+    <div class="mini">Küçük Bir İtiraf</div>
+    <h2>Neden Benimle Olmalısın? ❤️</h2>
+    <p>Sana söylemek istediğim birkaç küçük sebep var...</p>
+  </div>
 
-    <h2 class="section-title">Neden Sen?</h2>
+  <div class="reasons-grid">
 
-    <p class="section-subtitle">
-        Belki de bazı şeyleri kelimelerle anlatmak gerekir.
-    </p>
-
-    <div class="about-card">
-
-        <div class="quote">
-            "Bazen bir insan, farkında olmadan
-            günün en güzel düşüncesi olur."
-        </div>
-
-        Her insanın hayatında özel bir yeri vardır.
-        Bazılarıyla konuşmak istersin, bazılarını
-        merak edersin, bazılarını gördüğünde ise
-        yüzünde istemsiz bir gülümseme oluşur.
-
-        <br><br>
-
-        İşte bu sayfa da tam olarak böyle bir
-        düşüncenin küçük bir yansıması.
-
+    <div class="reason-card">
+      <span>01</span>
+      <h3>Ortak Noktalarımız</h3>
+      <p>İkimizin de sevdiği şeyler aynı. Bir sürü ortak noktamız var gibi duruyor.</p>
     </div>
 
-</section>
-
-<!-- MEMORIES -->
-
-<section class="memories" id="memories">
-
-    <h2 class="section-title">Küçük Bir Hayal</h2>
-
-    <p class="section-subtitle">
-        Henüz yaşanmamış ama güzel olabilecek şeyler...
-    </p>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">☕</div>
-            <h3>Bir Kahve</h3>
-            <p>
-                Uzun uzun konuşabileceğimiz,
-                zamanın nasıl geçtiğini
-                anlamayacağımız bir kahve.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🌙</div>
-            <h3>Güzel Bir Akşam</h3>
-            <p>
-                Biraz yürüyüş, biraz sohbet
-                ve unutulmayacak küçük
-                bir akşam.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">♡</div>
-            <h3>Belki Bir Gün</h3>
-            <p>
-                Bazen en güzel hikâyeler
-                küçük bir merakla
-                başlar.
-            </p>
-        </div>
-
+    <div class="reason-card">
+      <span>02</span>
+      <h3>Asla Sıkılmayız</h3>
+      <p>Birlikte geçirdiğimiz zamanın nasıl geçtiğini anlamayız bile.</p>
     </div>
 
-</section>
-
-<!-- LETTER -->
-
-<section class="letter" id="letter">
-
-    <h2 class="section-title">Sana Bir Not Var</h2>
-
-    <p class="section-subtitle">
-        Küçük bir sürpriz...
-    </p>
-
-    <div class="envelope">
-
-        <div class="envelope-icon">💌</div>
-
-        <p>
-            Belki bunu beklemiyordun ama
-            senin için küçük bir şey hazırlamak istedim.
-        </p>
-
-        <button class="main-button" onclick="showSecret()">
-            Mesajı Aç ♡
-        </button>
-
-        <div id="secret">
-
-            <p>Rüveyde...</p>
-
-            <p>
-                Seni daha yakından tanımayı gerçekten isterim.
-                Belki güzel bir sohbetle başlar her şey.
-                Kim bilir, belki de güzel bir hikâyenin
-                ilk sayfasıdır bu.
-            </p>
-
-            <p style="color:#f2a9c8;">
-                Kendine iyi bak. ♡
-            </p>
-
-        </div>
-
+    <div class="reason-card">
+      <span>03</span>
+      <h3>En Güzel Zamanlarımız</h3>
+      <p>Birlikte hayatımızın en güzel, en unutulmaz anlarını geçiririz.</p>
     </div>
 
+    <div class="reason-card">
+      <span>04</span>
+      <h3>Okulun Best Çifti</h3>
+      <p>Okulun en best çifti olacağımıza şüphe yok.</p>
+    </div>
+
+    <div class="reason-card">
+      <span>05</span>
+      <h3>Biraz Kıskanırlar</h3>
+      <p>Yan yana o kadar güzel duruyoruz ki bizi görenler kıskanır gibi. </p>
+    </div>
+
+    <div class="reason-card">
+      <span>06</span>
+      <h3>Netflix Dizisi Gibi</h3>
+      <p>Kendimizi bir Netflix dizisinin içindeymişiz gibi hissederiz.</p>
+    </div>
+
+    <div class="reason-card final-reason">
+      <span>07</span>
+      <h3>I'M THE ONE</h3>
+      <div class="final-heart">♥</div>
+    </div>
+
+  </div>
 </section>
 
-<!-- FOOTER -->
+<!-- DREAMS -->
+
+<section class="dream-section" id="dreams">
+  <div class="section-heading">
+    <div class="mini">Birlikte Hayal Et</div>
+    <h2>Küçük Bir Hayal...</h2>
+    <p>Belki de bir gün bunların hepsi gerçek olur.</p>
+  </div>
+
+  <div class="dream-grid">
+
+    <div class="dream-card">
+      <div class="emoji">🎬</div>
+      <h3>Film Gibi Günler</h3>
+      <p>Birlikte geçirdiğimiz her günün ayrı bir hikâyesi olması.</p>
+    </div>
+
+    <div class="dream-card">
+      <div class="emoji">🌙</div>
+      <h3>Uzun Sohbetler</h3>
+      <p>Gece boyunca konuşup zamanın nasıl geçtiğini unutmak.</p>
+    </div>
+
+    <div class="dream-card">
+      <div class="emoji">❤️</div>
+      <h3>Güzel Anılar</h3>
+      <p>Yıllar sonra bile hatırlayıp gülümseyeceğimiz anılar biriktirmek.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SECRET LETTER -->
+
+<section class="letter-section" id="letter">
+  <div class="letter-box">
+
+    <h2>Sana Küçük Bir Not 💌</h2>
+
+    <p>
+      Buraya kadar geldiysen son bir şey daha söylemek istiyorum.
+      Hazırsan küçük sürprizini açabilirsin.
+    </p>
+
+    <button class="letter-button" onclick="openLetter()">
+      Mektubu Aç ❤️
+    </button>
+
+    <div class="secret-letter" id="secretLetter">
+      Rüveyde,<br><br>
+
+      Belki bu site biraz çılgınca ama seni gülümsetebilmek
+      için hazırladım. Seninle daha fazla konuşmak,
+      güzel anılar biriktirmek ve birbirimizi daha yakından
+      tanımak gerçekten çok güzel olurdu.<br><br>
+
+      Kim bilir, belki de güzel bir hikâyenin başlangıcıdır... ❤️
+      <br><br>
+
+      <strong>— Benden sana.</strong>
+    </div>
+
+  </div>
+</section>
 
 <footer>
-    RÜVEYDE İÇİN SEVGİYLE HAZIRLANDI ♡
-    <br>
-    © 2026
+  <p>Senin için küçük bir web sitesi. <span>♥</span></p>
+  <p style="margin-top:8px;">Made with love.</p>
 </footer>
 
+<!-- MUSIC -->
+
+<audio id="backgroundMusic" loop>
+  <source src="music/romantic.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-button" id="musicButton" onclick="toggleMusic()" title="Müziği aç/kapat">
+  ♫
+</button>
+
 <script>
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
 
-// GİZLİ MESAJ
+let isPlaying = false;
 
-function showSecret() {
-
-    const message = document.getElementById("secret");
-
-    if (message.style.display === "block") {
-        return;
-    }
-
-    message.style.display = "block";
-
-    message.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
+function toggleMusic() {
+  if (!isPlaying) {
+    music.play().then(() => {
+      isPlaying = true;
+      musicButton.textContent = "❚❚";
+    }).catch(() => {
+      alert("Müzik dosyasını music klasörüne eklediğinden emin ol.");
     });
-
+  } else {
+    music.pause();
+    isPlaying = false;
+    musicButton.textContent = "♫";
+  }
 }
 
-// UÇAN KALPLER
+function openLetter() {
+  const letter = document.getElementById("secretLetter");
+  letter.classList.toggle("show");
+
+  const button = document.querySelector(".letter-button");
+
+  if (letter.classList.contains("show")) {
+    button.textContent = "Mektubu Kapat";
+  } else {
+    button.textContent = "Mektubu Aç ❤️";
+  }
+}
+
+/* FLOATING HEARTS */
 
 function createHeart() {
+  const heart = document.createElement("div");
+  heart.className = "floating-heart";
+  heart.textContent = Math.random() > 0.5 ? "♥" : "♡";
 
-    const heart = document.createElement("div");
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (12 + Math.random() * 20) + "px";
+  heart.style.animationDuration = (7 + Math.random() * 6) + "s";
 
-    heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
+  document.body.appendChild(heart);
 
-    heart.className = "floating-heart";
-
-    heart.style.left = Math.random() * 100 + "vw";
-
-    heart.style.fontSize =
-        (15 + Math.random() * 20) + "px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 7000);
-
+  setTimeout(() => {
+    heart.remove();
+  }, 13000);
 }
 
-// Mobil cihazlarda gereksiz yoğun animasyon olmasın.
-
-const isMobile = window.matchMedia("(max-width: 600px)").matches;
-
-setInterval(createHeart, isMobile ? 1800 : 900);
-
+setInterval(createHeart, 1100);
 </script>
 
 </body>
