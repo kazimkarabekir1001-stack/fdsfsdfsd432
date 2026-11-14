@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d18">
+<meta name="description" content="Rüveyde için hazırlanmış özel bir sayfa.">
+<title>Rüveyde | Belki Bir Gün...</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #100d18;
+    --surface: #211829;
+    --pink: #f3b8d0;
+    --pink-light: #fff0f5;
+    --text: #e5d3df;
+    --muted: #bbaab9;
+    --border: #56354c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+    background: var(--bg);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    font-family: inherit;
+}
+
+::selection {
+    background: #d77da6;
+    color: white;
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--pink);
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #e6d6e1;
+    font-size: 12px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--pink);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 50px;
+    overflow: hidden;
+
+    background:
+    radial-gradient(ellipse at 50% 35%, #75415f 0%, transparent 50%),
+    linear-gradient(145deg, #21172c, #100d18 80%);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+    radial-gradient(circle at 15% 20%, #e99cbd18, transparent 30%),
+    radial-gradient(circle at 85% 80%, #d77da618, transparent 30%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 850px;
+    animation: appear 1.8s ease;
+}
+
+.small-title {
+    color: #e9a9c4;
+    letter-spacing: 6px;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(65px, 12vw, 125px);
+    font-weight: 400;
+    color: var(--pink-light);
+    text-shadow: 0 0 35px #e58ab8;
+}
+
+.subtitle {
+    margin-top: 20px;
+    color: #dfc5d3;
+    font-size: clamp(12px, 1.5vw, 16px);
+    letter-spacing: 2px;
+    line-height: 1.9;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 42px;
+    padding: 15px 35px;
+    min-height: 48px;
+    border: 1px solid #e6a3c2;
+    border-radius: 40px;
+    color: white;
+    text-decoration: none;
+    transition: .4s;
+    cursor: pointer;
+    background: transparent;
+    font-size: 13px;
+}
+
+.main-button:hover {
+    background: #d77da6;
+    box-shadow: 0 0 30px #d77da6;
+    transform: translateY(-4px);
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: absolute;
+    color: #f1a6c5;
+    opacity: .4;
+    animation: float 7s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-45px) rotate(15deg);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 110px 6%;
+    scroll-margin-top: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 4vw, 45px);
+    font-weight: 400;
+    color: var(--pink);
+    margin-bottom: 18px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 55px;
+    line-height: 1.8;
+}
+
+/* ABOUT */
+
+.about {
+    background: #17111f;
+}
+
+.about-card {
+    max-width: 780px;
+    width: 100%;
+    margin: auto;
+    padding: 55px 45px;
+    border: 1px solid var(--border);
+    background: linear-gradient(145deg,#281b30,#191320);
+    border-radius: 20px;
+    text-align: center;
+    line-height: 2.2;
+    color: var(--text);
+    font-size: 14px;
+    box-shadow: 0 20px 70px #0005;
+}
+
+.quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(21px, 3vw, 27px);
+    color: var(--pink);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* CARDS */
+
+.memories {
+    background: var(--bg);
+}
+
+.cards {
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.card {
+    padding: 45px 25px;
+    background: var(--surface);
+    border: 1px solid #4b3049;
+    border-radius: 18px;
+    text-align: center;
+    transition: .4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #e6a3c2;
+    box-shadow: 0 10px 35px #d77da622;
+}
+
+.icon {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--pink);
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* LETTER */
+
+.letter {
+    background: linear-gradient(180deg,#17111f,#241522);
+    text-align: center;
+}
+
+.envelope {
+    max-width: 680px;
+    width: 100%;
+    margin: auto;
+    padding: 50px 40px;
+    background: #2b1c2c;
+    border: 1px solid #88536f;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px #0004;
+}
+
+.envelope-icon {
+    font-size: 48px;
+    animation: float 4s infinite ease-in-out;
+}
+
+.envelope p {
+    color: #e4c9d8;
+    line-height: 2.2;
+    margin: 22px 0;
+    font-size: 14px;
+}
+
+#secret {
+    display: none;
+    animation: appear 1s ease;
+    margin-top: 30px;
+    border-top: 1px solid #754b65;
+    padding-top: 25px;
+}
+
+#secret p:first-child {
+    font-family: 'Playfair Display', serif;
+    font-size: 29px;
+    color: var(--pink);
+}
+
+/* FOOTER */
+
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: var(--bg);
+    color: #a98b9d;
+    font-size: 11px;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+
+/* FLOATING HEART ANIMATION */
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ed9cbd;
+    opacity: .5;
+    pointer-events: none;
+    z-index: 30;
+    animation: rise 7s linear forwards;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    .navbar {
+        padding: 22px 5%;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    section {
+        padding: 85px 5%;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 80px 20px 40px;
+    }
+
+    .small-title {
+        font-size: 10px;
+        letter-spacing: 4px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: clamp(55px, 17vw, 85px);
+    }
+
+    .subtitle {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .main-button {
+        padding: 14px 27px;
+        font-size: 12px;
+        margin-top: 32px;
+    }
+
+    section {
+        padding: 75px 18px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .section-subtitle {
+        font-size: 11px;
+        margin-bottom: 35px;
+    }
+
+    .about-card {
+        padding: 30px 20px;
+        font-size: 13px;
+        line-height: 2;
+    }
+
+    .quote {
+        font-size: 21px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .card {
+        padding: 35px 22px;
+    }
+
+    .card h3 {
+        font-size: 21px;
+    }
+
+    .card p {
+        font-size: 13px;
+    }
+
+    .envelope {
+        padding: 32px 20px;
+    }
+
+    .envelope p {
+        font-size: 13px;
+    }
+
+    #secret p:first-child {
+        font-size: 26px;
+    }
+
+    footer {
+        padding: 30px 15px;
+        font-size: 9px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 360px) {
+    h1 {
+        font-size: 52px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .about-card {
+        padding: 25px 15px;
+    }
+
+    .main-button {
+        padding: 12px 22px;
+    }
+}
+
+/* REDUCE MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+    <div class="logo">Rüveyde ♡</div>
+
+    <div class="nav-links">
+        <a href="#about">Hakkında</a>
+        <a href="#memories">Hayaller</a>
+        <a href="#letter">Sana Notum</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="heart" style="top:15%;left:12%;font-size:35px;">♡</div>
+    <div class="heart" style="top:65%;left:80%;font-size:50px;animation-delay:2s;">♥</div>
+    <div class="heart" style="top:25%;right:15%;font-size:25px;animation-delay:3s;">♡</div>
+    <div class="heart" style="bottom:10%;left:25%;font-size:30px;animation-delay:1s;">♥</div>
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Sadece sana özel
+        </div>
+
+        <h1>Rüveyde</h1>
+
+        <p class="subtitle">
+            Bazı insanlar tesadüften çok daha fazlasıdır...
+        </p>
+
+        <a href="#about" class="main-button">
+            Hikâyeye göz at ♡
+        </a>
+
+    </div>
+</header>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2 class="section-title">Neden Sen?</h2>
+
+    <p class="section-subtitle">
+        Belki de bazı şeyleri kelimelerle anlatmak gerekir.
+    </p>
+
+    <div class="about-card">
+
+        <div class="quote">
+            "Bazen bir insan, farkında olmadan
+            günün en güzel düşüncesi olur."
+        </div>
+
+        Her insanın hayatında özel bir yeri vardır.
+        Bazılarıyla konuşmak istersin, bazılarını
+        merak edersin, bazılarını gördüğünde ise
+        yüzünde istemsiz bir gülümseme oluşur.
+
+        <br><br>
+
+        İşte bu sayfa da tam olarak böyle bir
+        düşüncenin küçük bir yansıması.
+
+    </div>
+
+</section>
+
+<!-- MEMORIES -->
+
+<section class="memories" id="memories">
+
+    <h2 class="section-title">Küçük Bir Hayal</h2>
+
+    <p class="section-subtitle">
+        Henüz yaşanmamış ama güzel olabilecek şeyler...
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">☕</div>
+            <h3>Bir Kahve</h3>
+            <p>
+                Uzun uzun konuşabileceğimiz,
+                zamanın nasıl geçtiğini
+                anlamayacağımız bir kahve.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌙</div>
+            <h3>Güzel Bir Akşam</h3>
+            <p>
+                Biraz yürüyüş, biraz sohbet
+                ve unutulmayacak küçük
+                bir akşam.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">♡</div>
+            <h3>Belki Bir Gün</h3>
+            <p>
+                Bazen en güzel hikâyeler
+                küçük bir merakla
+                başlar.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LETTER -->
+
+<section class="letter" id="letter">
+
+    <h2 class="section-title">Sana Bir Not Var</h2>
+
+    <p class="section-subtitle">
+        Küçük bir sürpriz...
+    </p>
+
+    <div class="envelope">
+
+        <div class="envelope-icon">💌</div>
+
+        <p>
+            Belki bunu beklemiyordun ama
+            senin için küçük bir şey hazırlamak istedim.
+        </p>
+
+        <button class="main-button" onclick="showSecret()">
+            Mesajı Aç ♡
+        </button>
+
+        <div id="secret">
+
+            <p>Rüveyde...</p>
+
+            <p>
+                Seni daha yakından tanımayı gerçekten isterim.
+                Belki güzel bir sohbetle başlar her şey.
+                Kim bilir, belki de güzel bir hikâyenin
+                ilk sayfasıdır bu.
+            </p>
+
+            <p style="color:#f2a9c8;">
+                Kendine iyi bak. ♡
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    RÜVEYDE İÇİN SEVGİYLE HAZIRLANDI ♡
+    <br>
+    © 2026
+</footer>
+
+<script>
+
+// GİZLİ MESAJ
+
+function showSecret() {
+
+    const message = document.getElementById("secret");
+
+    if (message.style.display === "block") {
+        return;
+    }
+
+    message.style.display = "block";
+
+    message.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+
+// UÇAN KALPLER
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
+
+    heart.className = "floating-heart";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 7000);
+
+}
+
+// Mobil cihazlarda gereksiz yoğun animasyon olmasın.
+
+const isMobile = window.matchMedia("(max-width: 600px)").matches;
+
+setInterval(createHeart, isMobile ? 1800 : 900);
+
+</script>
+
+</body>
+</html>
